@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<h1 style="text-align: center;">Please send you report (.jpg,.png)  </h1>
+<form style="text-align: center;" action="upload/" method="post" enctype="multipart/form-data">
+    <input type="text" name="email" id="your_email" placeholder="your email:" required>
+    <input type="file" name="imagefile" value="{{request.form.imagefile}}" id="fileToUpload" required>
+    <button type="submit" value="send">send</button>
+</form>
+
+{% endblock %}

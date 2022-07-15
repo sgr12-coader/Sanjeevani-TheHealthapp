@@ -1,0 +1,71 @@
+
+{% extends "layout.html" %}
+{% block body %}
+<!--    <h1 class="jumbotron text-center text-success p-2 ">Sanjeevani</h1>-->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 offset-sm-3">
+                <div id="chatbox" class="border rounded border-info p-2">
+                    <div class="text-msg bot"><span>Hello! I'm Sanjeevani</span></div>
+                    <div class="text-msg bot"><span>{{resp.msg}}</span></div>
+                </div>
+                <div id="userInput">
+                    <div class="form-row align-items-center">
+                        <div class="col-6">
+                            <input id="textInput" class="form-control" type="text" name="msg" placeholder="Type Your Message Here">
+                        </div>
+                        <div class="col d-flex justify-content-center">
+                           <button type="submit" id="buttonYes" class="btn border-info rounded-circle">
+                                <img width="40px" src="{{ url_for('static', filename='yes.png') }}" alt="">
+                            </button>
+                            <button type="submit" id="buttonNo" class="btn border-info rounded-circle">
+                                <img width="40px" src="{{ url_for('static', filename='no.jpeg') }}" alt="">
+                            </button>
+                           <button type="submit" id="buttonInput" class="btn border-info rounded-circle">
+                                <img width="30px" src="{{ url_for('static', filename='send.png') }}" alt="">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var next_step = {{resp.next_step}}
+        function getResponse() {
+            let userText = $("#textInput").val();
+            let userHtml = '<div class="text-msg client"><span>' + userText + '</span></div>';
+            $("#textInput").val("");
+            $("#chatbox").append(userHtml);
+            document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
+            $.get("/message", { msg: userText, next_step: next_step }).done(function(resp) {
+                var botHtml = '<div class="text-msg bot"><span style="white-space: break-spaces;">' + resp.msg + '</span></div>';
+                next_step = resp.next_step
+                $("#chatbox").append(botHtml);
+                document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
+            });
+        }
+        $("#textInput").keypress(function(e) {
+        //if enter key is pressed
+            if(e.which == 13) {
+                getResponse();
+            }
+        });
+        $("#buttonInput").click(function() {
+            getResponse();
+        });
+        $("#buttonYes").click(function() {
+            $("#textInput").val('yes');
+            getResponse();
+        });
+        $("#buttonNo").click(function() {
+            $("#textInput").val('no');
+            getResponse();
+        });
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+{% endblock %}

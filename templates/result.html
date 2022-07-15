@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block body %}
+
+
+<p style="text-align: center;">there is alert in you report<br>please Contact to your doctor</p>
+<hr>
+ {% for element in var %}
+      <p style="text-align: center;">{{ element }} </p>
+  {% endfor %}
+{% endblock %}  

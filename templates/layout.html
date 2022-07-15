@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<!--    <link rel="stylesheet" type="text/css" href={{ url_for('static', filename='style.css') }}>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    
+ 
+
+</head>
+
+<body>
+
+   <div class="header">
+  <img src="{{ url_for('static', filename='logo.png') }}" width="500" height="60">
+  <div class="header-right">
+    <a class="active" href="http://127.0.0.1:5000/">Home</a>
+    <a href="{{url_for('appoiment')}}">Book Appointment</a>
+      <a href="{{url_for('report')}}">Upload Report</a>
+      <a href="{{url_for('connect')}}">Connect us</a>
+    <a href="{{url_for('about')}}">About</a>
+  </div>
+</div>
+
+<!--    <h1 class="jumbotron text-center" style="color:blue;">Sanjeevani</h1>-->
+    <br>
+    <br>
+
+{% block body %}{% endblock %}
+
+    </body>
+    </html>
+

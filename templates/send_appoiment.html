@@ -1,0 +1,50 @@
+{% extends 'index.html' %}
+
+{% block body %}
+<div style="text-align: center ;width: 80%; margin: 10% ">
+<form method="post">
+  <div class="form-row">
+    <div class="col-md-6 mb-2">
+      <label for="validationDefault01">username</label>
+      <input type="text" class="form-control" name="username" id="username" placeholder="username"  required>
+    </div>
+    <div class="col-md-6 mb-2">
+      <label for="validationDefault02">Email</label>
+      <input type="text" class="form-control" id="email_customer" name="email_customer" placeholder="Email"  required>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="validationDefault05">Gender</label>
+      <input type="text" class="form-control" id="Gender" name="gender"  placeholder="Gender" required>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="validationDefault05">weight</label>
+      <input type="text" class="form-control" id="weight" name="weight" placeholder="weight" required>
+    </div>
+      <div class="col-md-4 mb-3">
+      <label for="validationDefault05">height</label>
+      <input type="text" class="form-control" id="height" name="height" placeholder="height" required>
+    </div>
+      <div class="col-md-4 mb-3">
+      <label for="validationDefault05">past deciese/medication</label>
+      <input type="text" class="form-control" id="medication" name="medication" placeholder="past deciese/medication" required>
+    </div>
+      <div class="col-md-4 mb-3">
+      <label for="validationDefault05">whatapp no</label>
+      <input type="text" class="form-control" id="whatapp" name="whatapp" placeholder="whatapp" required>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+      <label class="form-check-label" for="invalidCheck2">
+        Agree to terms and conditions
+      </label>
+    </div>
+  </div>
+    <input type="hidden" name="email_doctor" value="{{ var }}">
+  <button class="btn btn-primary" type="submit">Submit form</button>
+</form>
+</div>
+{% endblock body %}

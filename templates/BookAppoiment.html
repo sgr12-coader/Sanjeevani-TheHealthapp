@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% block body %}
+
+
+<h1 style="text-align: center;"></h1>
+
+<hr>
+
+<div class="card-columns">
+    {% for doctor in var.doctors %}
+  <div class="card">
+    <img class="card-img-top" src="{{ url_for('static', filename='ss.jpeg') }}" alt="Card image cap" width="30" height="300">
+    <div class="card-body">
+      <h5 class="card-title">dr.{{doctor.name }}</h5>
+<!--      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
+        <ul>
+            <li>{{ var.header[1] }}: {{ doctor.speciliest }}</li>
+            <li>{{ var.header[3] }}: {{ doctor.avl_time }}</li>
+            <li>{{ var.header[4] }}: {{ doctor.fees }}</li>
+<!--            <li>{{ var.header[5] }}: {{ doctor.email }}</li>-->
+<!--            <li>{{ var.header[6] }}: {{ doctor.WhatsApp }}</li>-->
+        </ul>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">{{ var.header[2] }} {{ doctor.online }}</small>
+        <a href="{{ url_for('send_appoiment', email=doctor.email )}}" class="btn btn-primary header-right">Get Appointment</a>
+    </div>
+  </div>
+        {% endfor %}
+</div>
+{% endblock %}  

@@ -1,0 +1,42 @@
+Test Result Reference
+
+interval
+CBC
+
+RBC (x 108/1L) 6.15 5.0-11.20
+Haemoglobin (g/dl) 10.0 10.6-15.6
+Haematocrit (%) 34.4 31.7-48.0
+MCV (FL) 55.9 36.7-55.0
+MCH (pg) 16.3 12.317.3
+MCHC (g/dl) 29.1 30.1-35.6
+RDW (%) 18.3 16.7-22.9
+Platelets (x 103/uIL) 323 175-500
+WBC (x 103/11) 4.13 4.04-18.70
+Automated differential (x 103/ul)
+
+Segmented neutrophils 2.45 2.3-14.0
+
+Band neutrophils 0.00 0.0-0.0
+
+Lymphocytes 0.5 0.8-6.1
+
+Monocytes 0.11 0.0-0.7
+
+Eosinophils 0.00 0.0-1.5
+
+Basophils 0.00 0.0-0.1
+
+Chemistry - Canine/feline standard panel
+
+Glucose (mg/dL) 135: 67-168
+BUN (mg/dL) 45.8 15-60
+Creatinine (mg/dl) 1.9 1.0-2.0
+Sodium (mmol/L) 151.0 146-157
+Potassium (mmol/L) 48 3.5-4.8
+Chloride (mmol/L) 110 116-126
+Total protein (g/dl) 6.08 6.0-8.6
+ALT (U/L) 15 <80
+AST (U/L) 27 <40
+ALP (U/1) 45 <145
+GGT (U/L) 6 5.19
+Total bilirubin (mg/dl) 0.3 0.1-0.8
